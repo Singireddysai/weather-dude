@@ -65,7 +65,7 @@ def get_entry():
         label2.configure(text=wt.output)
     else:
         label2.configure(text=f"The location you've entered is :\n{wt.city} of {wt.country}\n lat:{wt.lat}\n lon:{wt.lon} ")
-        label3.configure(text=f"{wt.windspeed}km/h       {wt.description}         {wt.visibility}m         {wt.humidity}%            {wt.feelslike}°")
+        label3.configure(text=f"{wt.windspeed}km/h       {wt.description}         {wt.visibility}m         {wt.humidity}%             {wt.feelslike}°")
         label.configure(text=f"{wt.temp}°")
     label7.configure(text=f"{wt.main}\n Current time:{time}")
     
@@ -111,7 +111,7 @@ def locate():
     wt.locateme()
     wt.weather_details()
     if(wt.output!="city not found"):
-        label3.configure(text=f"{wt.windspeed}km/h         {wt.description}           {wt.visibility}m            {wt.humidity}%            {wt.feelslike}°")
+        label3.configure(text=f"{wt.windspeed}km/h         {wt.description}           {wt.visibility}m             {wt.humidity}%            {wt.feelslike}°")
         label.configure(text=f"{wt.temp}°")
     label7.configure(text=f"{wt.main}\nCurrent time:{time}")
     
@@ -123,20 +123,20 @@ button1=CTkButton(master=root,command=locate,text="Locate Me",
 
 ####### weather report box
 image4=Image.open("weather_forecast_env\\rectangular_box.jpeg")
-image4=CTkImage(image4,size=(770,80))
-label3=CTkLabel(master=root,image=image4,text=f"NONE         NONE            NONE             NONE           NONE",
+image4=CTkImage(image4,size=(850,95))
+label3=CTkLabel(master=root,image=image4,text=f"NONE          NONE                  NONE             NONE             NONE",
                 corner_radius=90,
                 height=90,
                 font=("Comic Sans MS",20,"bold"))
-label3.place(x=-20,y=460)
+label3.place(x=-80,y=460)
 
 ##### titles for weather report
-templabel=CTkLabel(master=root,text="Wind          Description           Visibility         Humidity      feels like",
+templabel=CTkLabel(master=root,text="Wind            Description             Visibility          Humidity       feels like",
                    font=("Comic Sans MS",20,"bold"),
                    fg_color=("#8fc9f7","#8fc9f7"),
                    height=50,
                    width=570,
-                   corner_radius=40).place(x=20,y=417)
+                   corner_radius=40).place(x=-15,y=417)
 
 
 root.mainloop()
