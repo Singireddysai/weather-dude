@@ -5,8 +5,7 @@ from datetime import datetime
 
 ######## current time
 
-time=datetime.now()
-time=time.strftime("%I:%M %p")
+time=datetime.now().strftime("%I:%M %p")
 
 ######## setting theme of the program
 set_appearance_mode("light")
@@ -63,10 +62,12 @@ def get_entry():
     wt.weather_details()
     if(wt.output=="city not found"):
         label2.configure(text=wt.output)
+        label3.configure(text="NONE          NONE                  NONE             NONE             NONE")
     else:
         label2.configure(text=f"The location you've entered is :\n{wt.city} of {wt.country}\n lat:{wt.lat}\n lon:{wt.lon} ")
         label3.configure(text=f"{wt.windspeed}km/h       {wt.description}         {wt.visibility}m         {wt.humidity}%             {wt.feelslike}°")
         label.configure(text=f"{wt.temp}°")
+    
     label7.configure(text=f"{wt.main}\n Current time:{time}")
     
 ##### clearing the search box function def
